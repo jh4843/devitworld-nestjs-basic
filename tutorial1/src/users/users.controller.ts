@@ -32,7 +32,7 @@ export class UsersController {
 
   @Get('all-users')
   async findAll(@Req() request: Request): Promise<User[]> {
-    console.log(request.headers);
+    console.log(`(Handler) Incoming Request on ${request.path}`);
     return this.usersService.findAll();
   }
 

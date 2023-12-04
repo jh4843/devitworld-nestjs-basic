@@ -20,14 +20,14 @@ export class LoggingInterceptor implements NestInterceptor {
     const ip = this.getIP(request);
 
     this.logger.log(
-      `Incoming Request on ${request.path}`,
+      `(Pre-Inter) Incoming Request on ${request.path}`,
       `method=${request.method} ip=${ip}`,
     );
 
     return next.handle().pipe(
       tap(() => {
         this.logger.log(
-          `End Request for ${request.path}`,
+          `(Post-Inter) End Request for ${request.path}`,
           `method=${request.method} ip=${ip} duration=${Date.now() - now}ms`,
         );
       }),
