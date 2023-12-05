@@ -3,6 +3,17 @@
 ## Create Project
 nest new tutorial-sample
 
+## Coding tips
+### Create modules
+`$nest g module modules-name`
+
+### Create Controller
+`$ nest g controller controller-name`
+
+### Create Service
+`$ nest g service service-name`
+
+
 ## Project tree
 ```
 devitworld-nestjs-basic
