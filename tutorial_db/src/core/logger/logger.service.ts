@@ -1,8 +1,8 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { ConsoleLogger, Injectable } from '@nestjs/common';
 import { ILogger } from './logger.interface';
 
 @Injectable()
-export class LoggerService extends Logger implements ILogger {
+export class LoggerService extends ConsoleLogger implements ILogger {
   debug(context: string, message: string) {
     if (process.env.NODE_ENV !== 'production') {
       super.debug(`[DEBUG] ${message}`, context);

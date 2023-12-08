@@ -1,4 +1,4 @@
-import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 
 // Database
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -10,6 +10,7 @@ import { AppService } from './app.service';
 import { LoggerModule } from './core/logger/logger.module';
 
 import { User } from './users/entities/user.entity';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { User } from './users/entities/user.entity';
     }),
 
     LoggerModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
